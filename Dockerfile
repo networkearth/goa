@@ -18,8 +18,6 @@ RUN rm Miniconda3-latest-Linux-aarch64.sh
 # Needed for Tensorflow to work
 RUN root/miniconda3/bin/conda install -y h5py
 
-RUN root/miniconda3/bin/conda install geopandas geoplot rasterio
-
 RUN apt-get -y update
 RUN apt-get install -y npm
 RUN npm install -g aws-cdk
@@ -33,5 +31,3 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv
 RUN unzip awscliv2.zip
 RUN ./aws/install
 RUN rm -rf awscliv2.zip aws
-
-RUN apt-get install -y default-jre
